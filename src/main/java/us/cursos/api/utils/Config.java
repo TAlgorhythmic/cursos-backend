@@ -1,10 +1,9 @@
 package us.cursos.api.utils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.Reader;
-
 public class Config {
+
+    private String httpHost;
+    private int httpPort;
 
     private String databaseHost;
     private String databaseName;
@@ -12,12 +11,14 @@ public class Config {
     private int databasePort;
     private String databasePassword;
 
-    public Config() {}
-
-    public void load(BufferedReader reader) throws IOException {
-        try (reader) {
-
-        }
+    Config(String httpHost, int httpPort, String databaseHost, String databaseName, String databaseUsername, int databasePort, String databasePassword) {
+        this.httpHost = httpHost;
+        this.httpPort = httpPort;
+        this.databaseHost = databaseHost;
+        this.databaseName = databaseName;
+        this.databaseUsername = databaseUsername;
+        this.databasePort = databasePort;
+        this.databasePassword = databasePassword;
     }
 
     public int getDatabasePort() {
